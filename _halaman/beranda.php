@@ -14,12 +14,12 @@ $session->pull("info")
         <!-- small box -->
         <div class="small-box bg-aqua">
             <div class="inner">
-                <h3>1000</h3>
-
-                <p>Daftar Mahasiswa</p>
+                <a href="#"></a>
+                <h3>14</h3>
+                <p>Total Pegawai</p>
             </div>
             <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="ion ion-fork-repo"></i>
             </div>
 
         </div>
@@ -29,9 +29,9 @@ $session->pull("info")
         <!-- small box -->
         <div class="small-box bg-yellow">
             <div class="inner">
-                <h3>44</h3>
+                <h3>00</h3>
 
-                <p>User Registrations</p>
+                <p>...</p>
             </div>
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -44,9 +44,9 @@ $session->pull("info")
         <!-- small box -->
         <div class="small-box bg-red">
             <div class="inner">
-                <h3>65</h3>
+                <h3>00</h3>
 
-                <p>Unique Visitors</p>
+                <p>...</p>
             </div>
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
