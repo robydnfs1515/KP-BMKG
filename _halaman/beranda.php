@@ -4,6 +4,7 @@ $judul = $title;
 $session->pull("info")
 
 ?>
+<?= $session->pull("info") ?>
 
 <?= content_open($title = 'Informasi Beranda') ?>
 
