@@ -1,4 +1,6 @@
 <?php
+$judul = 'Login';
+
 $setTemplate = false;
 ?>
 
