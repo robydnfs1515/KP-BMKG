@@ -59,7 +59,7 @@ $session->pull("info")
 <!-- /.row -->
 <br>
 
-<!-- <?= content_open() ?>
-<center> <img src="assets/LogoUnimalBaru.png" style="width: 20%; opacity: 50%;"> </center> 
+<?= content_open() ?>
+<center> <img src="./assets/Logo_BMKG_(2010).png" style="width: 20%; opacity: 50%;"> </center>
 
 <?= content_close() ?>

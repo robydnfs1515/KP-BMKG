@@ -6,6 +6,7 @@ if (isset($_POST['simpan'])) {
     if ($_POST['ID'] == "") {
         $data['USERNAME'] = $_POST['USERNAME'];
         $data['PASSWORD'] = password_hash($_POST['PASSWORD'], PASSWORD_DEFAULT);
+        $data['NIP'] = $_POST['NIP'];
         $exec = $db->insert('users', $data);
         $info = '<div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -28,6 +29,7 @@ if (isset($_POST['simpan'])) {
 $id_pegawai = "";
 $username_pegawai = "";
 $password_pegawai = "";
+$nip_pegawai = "";
 
 $getdata = $db->ObjectBuilder()->get('users');
 
@@ -46,6 +48,11 @@ $getdata = $db->ObjectBuilder()->get('users');
         <label for="password"></label>
         <?= input_text('PASSWORD', $password_pegawai) ?>
         <small id="helpId" class="text-muted">Password </small>
+    </div>
+    <div class="form-group">
+        <label for="password"></label>
+        <?= input_number('NIP', $nip_pegawai) ?>
+        <small id="helpId" class="text-muted">NIP </small>
     </div>
     <div class="form-group">
         <button type="submit" name="simpan" class="btn btn-info"> <i class="fa fa-save"></i> Simpan</button>

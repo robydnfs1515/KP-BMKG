@@ -5,7 +5,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= templates() ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?= templates() ?>../../../assets/user.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p><?= $session->get("USERNAME") ?></p>
@@ -26,8 +26,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">HOME</li>
-            <li class="treeview-dasboard">
+            <li>
                 <a href="<?= url('beranda') ?>">
                     <i class="fa fa-dashboard"></i>
                     <span>Dashboard</span></a>
