@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'bff0dcd23e3635252158a3179d45e86fa02a38bb',
+        'reference' => '9d19383145a37f6d6bb27a7a2a492252c221dce0',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'bff0dcd23e3635252158a3179d45e86fa02a38bb',
+            'reference' => '9d19383145a37f6d6bb27a7a2a492252c221dce0',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -58,14 +58,12 @@
             'dev_requirement' => false,
         ),
         'verot/class.upload.php' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => '2.1.0',
+            'version' => '2.1.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../verot/class.upload.php',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'reference' => '4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff',
+            'aliases' => array(),
+            'reference' => '4d9aae875245948d21e42ade332fb45f897f28bb',
             'dev_requirement' => false,
         ),
     ),

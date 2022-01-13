@@ -216,24 +216,23 @@
         },
         {
             "name": "verot/class.upload.php",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
+            "version": "2.1.0",
+            "version_normalized": "2.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verot/class.upload.php.git",
-                "reference": "4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff"
+                "reference": "4d9aae875245948d21e42ade332fb45f897f28bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff",
-                "reference": "4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff",
+                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/4d9aae875245948d21e42ade332fb45f897f28bb",
+                "reference": "4d9aae875245948d21e42ade332fb45f897f28bb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
             },
-            "time": "2021-10-06T20:46:58+00:00",
-            "default-branch": true,
+            "time": "2020-12-13T22:26:17+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -260,7 +259,7 @@
             "support": {
                 "email": "colin@verot.net",
                 "issues": "https://github.com/verot/class.upload.php/issues",
-                "source": "https://github.com/verot/class.upload.php/tree/master"
+                "source": "https://github.com/verot/class.upload.php/tree/2.1.0"
             },
             "install-path": "../verot/class.upload.php"
         }

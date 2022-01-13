@@ -30,8 +30,8 @@ function registrasi($data)
     if (mysqli_fetch_assoc($result)) {
 
         echo "<script>
- 				alert('Username Telah Digunakan!');
- 				</script>";
+ 			alert('Username Telah Digunakan!');
+ 			</script>";
 
         return false;
     }
@@ -39,8 +39,8 @@ function registrasi($data)
     if ($password !== $password2) {
 
         echo "<script>
- 				alert('Konfirmasi Password Tidak Sesuai!');
- 				</script>";
+ 			alert('Konfirmasi Password Tidak Sesuai!');
+ 			</script>";
 
         return false;
     }
@@ -87,7 +87,7 @@ while ($data = mysqli_fetch_array($query)) {
 
     <div class="profile-container">
         <div class="img-container">
-            <img src="./assets/profil.jpg" alt="profile image">
+            <img src="./assets/kepala.jpeg" alt="profile image">
         </div>
         <p class="info full-name"><?= $data["NAMA"]; ?></p>
         <p class="info role">
@@ -201,7 +201,7 @@ body {
     font-size: 1.4em;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #b92a76;
+    color: #000;
 }
 
 .posts-info {

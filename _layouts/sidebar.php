@@ -5,7 +5,8 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= templates() ?>../../../assets/user.jpg" class="img-circle" alt="User Image">
+                <img src="<?= templates() ?>../../../assets/admin-imam.jpeg" class="img-circle" width="10%"
+                    alt="User Image">
             </div>
             <div class="pull-left info">
                 <p><?= $session->get("USERNAME") ?></p>

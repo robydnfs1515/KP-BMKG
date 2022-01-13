@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90eff3ad8746bbb3cb294007d56b66b1",
+    "content-hash": "4c086b5ce10a70cdda1e95a5ad7924de",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -210,22 +210,21 @@
         },
         {
             "name": "verot/class.upload.php",
-            "version": "dev-master",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verot/class.upload.php.git",
-                "reference": "4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff"
+                "reference": "4d9aae875245948d21e42ade332fb45f897f28bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff",
-                "reference": "4f6c0aad06a4777d3eddc480fd3e25a2cdc0a8ff",
+                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/4d9aae875245948d21e42ade332fb45f897f28bb",
+                "reference": "4d9aae875245948d21e42ade332fb45f897f28bb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -251,17 +250,16 @@
             "support": {
                 "email": "colin@verot.net",
                 "issues": "https://github.com/verot/class.upload.php/issues",
-                "source": "https://github.com/verot/class.upload.php/tree/master"
+                "source": "https://github.com/verot/class.upload.php/tree/2.1.0"
             },
-            "time": "2021-10-06T20:46:58+00:00"
+            "time": "2020-12-13T22:26:17+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "joshcam/mysqli-database-class": 20,
-        "verot/class.upload.php": 20
+        "joshcam/mysqli-database-class": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

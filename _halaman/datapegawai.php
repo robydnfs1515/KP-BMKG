@@ -4,50 +4,55 @@ $judul = $title;
 $url = 'datapegawai';
 
 if (isset($_POST['save'])) {
-    if ($_POST['ID'] == "") {
-        $data['NAMA'] = $_POST['NAMA'];
-        $data['NIP'] = $_POST['NIP'];
-        $data['TEMPAT_LAHIR'] = $_POST['TEMPAT_LAHIR'];
-        $data['ALAMAT'] = $_POST['ALAMAT'];
-        $data['TANGGAL_LAHIR'] = $_POST['TANGGAL_LAHIR'];
-        $data['AGAMA'] = $_POST['AGAMA'];
-        $data['GOLONGAN'] = $_POST['GOLONGAN'];
-        $data['JABATAN'] = $_POST['JABATAN'];
-        $data['NO_TELEPON'] = $_POST['NO_TELEPON'];
-        $data['SPEGAWAI'] = $_POST['SPEGAWAI'];
-        $db->insert("pegawai", $data);
+  $file = upload('UPLOAD', 'profil-pegawai');
+  if ($file != false) {
+    $data['UPLOAD'] = $file;
+  }
+
+  if ($_POST['ID'] == "") {
+    $data['NAMA'] = $_POST['NAMA'];
+    $data['NIP'] = $_POST['NIP'];
+    $data['TEMPAT_LAHIR'] = $_POST['TEMPAT_LAHIR'];
+    $data['ALAMAT'] = $_POST['ALAMAT'];
+    $data['TANGGAL_LAHIR'] = $_POST['TANGGAL_LAHIR'];
+    $data['AGAMA'] = $_POST['AGAMA'];
+    $data['GOLONGAN'] = $_POST['GOLONGAN'];
+    $data['JABATAN'] = $_POST['JABATAN'];
+    $data['NO_TELEPON'] = $_POST['NO_TELEPON'];
+    $data['SPEGAWAI'] = $_POST['SPEGAWAI'];
+    $db->insert("pegawai", $data);
 ?>
 <script type="text/javascript">
 window.alert('Data Berhasih Di Simpan');
 window.location.href = "<?= url('datapegawai') ?>";
 </script>
 <?php
-    } else {
-        $data['NAMA'] = $_POST['NAMA'];
-        $data['NIP'] = $_POST['NIP'];
-        $data['TEMPAT_LAHIR'] = $_POST['TEMPAT_LAHIR'];
-        $data['ALAMAT'] = $_POST['ALAMAT'];
-        $data['TANGGAL_LAHIR'] = $_POST['TANGGAL_LAHIR'];
-        $data['AGAMA'] = $_POST['AGAMA'];
-        $data['GOLONGAN'] = $_POST['GOLONGAN'];
-        $data['JABATAN'] = $_POST['JABATAN'];
-        $data['NO_TELEPON'] = $_POST['NO_TELEPON'];
-        $data['SPEGAWAI'] = $_POST['SPEGAWAI'];
-        $db->where('ID', $_POST['ID']);
-        $db->update("pegawai", $data);
-    ?>
+  } else {
+    $data['NAMA'] = $_POST['NAMA'];
+    $data['NIP'] = $_POST['NIP'];
+    $data['TEMPAT_LAHIR'] = $_POST['TEMPAT_LAHIR'];
+    $data['ALAMAT'] = $_POST['ALAMAT'];
+    $data['TANGGAL_LAHIR'] = $_POST['TANGGAL_LAHIR'];
+    $data['AGAMA'] = $_POST['AGAMA'];
+    $data['GOLONGAN'] = $_POST['GOLONGAN'];
+    $data['JABATAN'] = $_POST['JABATAN'];
+    $data['NO_TELEPON'] = $_POST['NO_TELEPON'];
+    $data['SPEGAWAI'] = $_POST['SPEGAWAI'];
+    $db->where('ID', $_POST['ID']);
+    $db->update("pegawai", $data);
+  ?>
 <script type="text/javascript">
 window.alert('Data Berhasih Di Edit');
 window.location.href = "<?= url('datapegawai') ?>";
 </script>
 <?php
-    }
+  }
 }
 
 if (isset($_GET['delete'])) {
-    $db->where("ID", $_GET['id']);
-    $db->delete("pegawai");
-    ?>
+  $db->where("ID", $_GET['id']);
+  $db->delete("pegawai");
+  ?>
 <script type="text/javascript">
 window.alert('Data Berhasih Di Hapus');
 window.location.href = "<?= url('datapegawai') ?>";
@@ -58,42 +63,49 @@ window.location.href = "<?= url('datapegawai') ?>";
 
 if (isset($_GET['tambah']) or isset($_GET['edit'])) {
 
-    $id_pegawai = "";
-    $nama_pegawai = "";
-    $nip_pegawai = "";
-    $tempatlahir_pegawai = "";
-    $alamat_pegawai = "";
-    $tanggallahir_pegawai = "";
-    $agama_pegawai = "";
-    $golongan_pegawai = "";
-    $jabatan_pegawai = "";
-    $notelp_pegawai = "";
-    $status_pegawai = "";
+  $id_pegawai = "";
+  $nama_pegawai = "";
+  $nip_pegawai = "";
+  $tempatlahir_pegawai = "";
+  $alamat_pegawai = "";
+  $tanggallahir_pegawai = "";
+  $agama_pegawai = "";
+  $golongan_pegawai = "";
+  $jabatan_pegawai = "";
+  $notelp_pegawai = "";
+  $status_pegawai = "";
+  $upload_pegawai = "";
 
-    if (isset($_GET['edit']) and isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $db->where('ID', $id);
-        $row = $db->ObjectBuilder()->getOne('pegawai');
-        if ($db->count > 0) {
-            $id_pegawai = $row->ID;
-            $nama_pegawai = $row->NAMA;
-            $nip_pegawai = $row->NIP;
-            $tempatlahir_pegawai = $row->TEMPAT_LAHIR;
-            $alamat_pegawai = $row->ALAMAT;
-            $tanggallahir_pegawai = $row->TANGGAL_LAHIR;
-            $agama_pegawai = $row->AGAMA;
-            $golongan_pegawai = $row->GOLONGAN;
-            $jabatan_pegawai = $row->JABATAN;
-            $notelp_pegawai = $row->NO_TELEPON;
-            $status_pegawai = $row->SPEGAWAI;
-        }
+  if (isset($_GET['edit']) and isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $db->where('ID', $id);
+    $row = $db->ObjectBuilder()->getOne('pegawai');
+    if ($db->count > 0) {
+      $id_pegawai = $row->ID;
+      $nama_pegawai = $row->NAMA;
+      $nip_pegawai = $row->NIP;
+      $tempatlahir_pegawai = $row->TEMPAT_LAHIR;
+      $alamat_pegawai = $row->ALAMAT;
+      $tanggallahir_pegawai = $row->TANGGAL_LAHIR;
+      $agama_pegawai = $row->AGAMA;
+      $golongan_pegawai = $row->GOLONGAN;
+      $jabatan_pegawai = $row->JABATAN;
+      $notelp_pegawai = $row->NO_TELEPON;
+      $status_pegawai = $row->SPEGAWAI;
+      $upload_pegawai = $row->UPLOAD;
     }
+  }
 ?>
 
 <?= content_open($title = 'Input Data Pegawai') ?>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <?= input_hidden('ID', $id_pegawai) ?>
+    <div class="form-grup">
+        <?= input_file('UPLOAD', $upload_pegawai) ?>
+        <small>Upload Foto Pegawai</small>
+    </div>
+    <br>
     <div class="form-grup">
         <?= input_text('NAMA', $nama_pegawai) ?>
         <small>Nama Pegawai</small>
@@ -159,12 +171,13 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
 <a href="<?= url($url . '&tambah') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah</a>
 <hr>
 
-<table class="table table-striped table">
+<table id="example" class="display nowrap" style="width:100%">
     <thead>
         <tr>
             <th>
                 <center>NO</center>
             </th>
+            <th>PROFIL</th>
             <th>NAMA</th>
             <th>NIP</th>
             <th>TEMPAT LAHIR</th>
@@ -181,16 +194,17 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
 
     <tbody>
         <?php
-            $no = 1;
-            $getdata = $db->ObjectBuilder()->get('pegawai');
-            foreach ($getdata as $row) {
-            ?>
+      $no = 1;
+      $getdata = $db->ObjectBuilder()->get('pegawai');
+      foreach ($getdata as $row) {
+      ?>
         <tr>
             <td>
                 <center>
                     <?= $no ?>
                 </center>
             </td>
+            <td><?= $row->UPLOAD ?></td>
             <td><?= $row->NAMA ?></td>
             <td><?= $row->NIP ?></td>
             <td><?= $row->TEMPAT_LAHIR ?></td>
@@ -214,11 +228,18 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
             </td>
         </tr>
         <?php
-                $no++;
-            }
-            ?>
+        $no++;
+      }
+      ?>
     </tbody>
 </table>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable({
+        "scrollX": true
+    });
+});
+</script>
 <?= content_close() ?>
 
 <?php } ?>
