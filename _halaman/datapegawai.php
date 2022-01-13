@@ -74,6 +74,7 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
   $jabatan_pegawai = "";
   $notelp_pegawai = "";
   $status_pegawai = "";
+  $upload_profil = "";
 
   if (isset($_GET['edit']) and isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -91,6 +92,7 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
       $jabatan_pegawai = $row->JABATAN;
       $notelp_pegawai = $row->NO_TELEPON;
       $status_pegawai = $row->SPEGAWAI;
+      $upload_profil  = $row->UPLOAD;
     }
   }
 ?>
@@ -99,6 +101,11 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
 
 <form method="post" enctype="multipart/form-data">
     <?= input_hidden('ID', $id_pegawai) ?>
+    <div class="form-grup">
+        <?= input_file('UPLOAD', $upload_profil) ?>
+        <small>Upload Foto Pegawai</small>
+    </div>
+    <br>
     <div class="form-grup">
         <?= input_text('NAMA', $nama_pegawai) ?>
         <small>Nama Pegawai</small>
@@ -164,12 +171,13 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
 <a href="<?= url($url . '&tambah') ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah</a>
 <hr>
 
-<table id="example" class="table table-bordered table-striped">
+<table id="example2" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>
                 <center>NO</center>
             </th>
+            <th>PROFIL</th>
             <th>NAMA</th>
             <th>NIP</th>
             <th>TEMPAT LAHIR</th>
@@ -196,6 +204,7 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
                     <?= $no ?>
                 </center>
             </td>
+            <td><?= $row->UPLOAD ?></td>
             <td><?= $row->NAMA ?></td>
             <td><?= $row->NIP ?></td>
             <td><?= $row->TEMPAT_LAHIR ?></td>
@@ -208,14 +217,14 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
             <td><?= $row->SPEGAWAI ?></td>
             <td>
                 <a href="<?= url($url . '&edit&id=' . $row->ID) ?>" class="btn btn-info"><i class="fa fa-edit"></i>
-                </a>
+                    Edit</a>
                 <a href="<?= url('idcard' . '&print&id=' . $row->ID) ?>" class="btn btn-primary" width="100%"><i
                         class="fa fa-print"></i>
-                </a>
+                    Print</a>
                 <a href="<?= url($url . '&delete&id=' . $row->ID) ?>" class="btn btn-danger"
                     onclick="return confirm('Apa anda yakin untuk menghapus data ini ?')"><i
                         class="fas fa-backspace"></i>
-                </a>
+                    Delete</a>
             </td>
         </tr>
         <?php

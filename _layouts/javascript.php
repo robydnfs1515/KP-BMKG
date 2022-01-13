@@ -12,8 +12,15 @@
 <script src="<?= templates() ?>dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= templates() ?>dist/js/demo.js"></script>
+
+<script src="<?= templates() ?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= templates() ?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
 <script>
 $(document).ready(function() {
     $('.sidebar-menu').tree()
-})
+    $('#example2').DataTable({
+        "scrollX": true
+    });
+});
 </script>
