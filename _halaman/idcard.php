@@ -87,7 +87,7 @@ while ($data = mysqli_fetch_array($query)) {
 
     <div class="profile-container">
         <div class="img-container">
-            <img src="./assets/kepala.jpeg" alt="profile image">
+            <img src="assets/unggah/profil-pegawai/<?php echo $data["UPLOAD"];?>">
         </div>
         <p class="info full-name"><?= $data["NAMA"]; ?></p>
         <p class="info role">

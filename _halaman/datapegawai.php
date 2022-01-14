@@ -3,6 +3,25 @@ $title = "Pegawai";
 $judul = $title;
 $url = 'datapegawai';
 
+// function upload (){
+//     $namaFile = $_FILES ['UPLOAD']['nama'];
+//     $ukuranFile = $_FILES ['UPLOAD']['size'];
+//     $error = $_FILES ['UPLOAD']['error'];
+//     $tmpName = $_FILES ['UPLOAD']['tmpName'];
+
+//     // Cek apakah ada gambar yang di upload
+//     if ($error === 4) {
+//         echo "<script>
+//         alert ('Pilih Gambar terlebih dahulu!')
+//         </script>";
+//         return false;
+//     }
+
+//     // gambar siap uploaded
+//     move_uploaded_files($tmpName, 'temp/'. $namaFile);
+//     return $namaFile;
+// }
+
 if (isset($_POST['save'])) {
   $file = upload('UPLOAD', 'profil-pegawai');
   if ($file != false) {
@@ -204,7 +223,7 @@ if (isset($_GET['tambah']) or isset($_GET['edit'])) {
                     <?= $no ?>
                 </center>
             </td>
-            <td><?= $row->UPLOAD ?></td>
+            <td><img src="assets/unggah/profil-pegawai/<?=  $row->UPLOAD ?>" width="80px"></td>
             <td><?= $row->NAMA ?></td>
             <td><?= $row->NIP ?></td>
             <td><?= $row->TEMPAT_LAHIR ?></td>

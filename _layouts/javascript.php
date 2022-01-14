@@ -20,6 +20,7 @@
 $(document).ready(function() {
     $('.sidebar-menu').tree()
     $('#example2').DataTable({
+        "scrollY": 400,
         "scrollX": true
     });
 });
